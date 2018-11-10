@@ -13,6 +13,8 @@
 		C5CB1A0B2194E9FC00430D51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CB1A092194E9FC00430D51 /* Main.storyboard */; };
 		C5CB1A0D2194E9FE00430D51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CB1A0C2194E9FE00430D51 /* Assets.xcassets */; };
 		C5CB1A102194E9FE00430D51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CB1A0E2194E9FE00430D51 /* LaunchScreen.storyboard */; };
+		C5CB1A1821964C3700430D51 /* human-body-d-clip-art-35243079-15-clipart-1024x839.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5CB1A1721964C3700430D51 /* human-body-d-clip-art-35243079-15-clipart-1024x839.jpg */; };
+		C5CB1A1A219723F900430D51 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB1A19219723F900430D51 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C5CB1A0C2194E9FE00430D51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5CB1A0F2194E9FE00430D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5CB1A112194E9FE00430D51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5CB1A1721964C3700430D51 /* human-body-d-clip-art-35243079-15-clipart-1024x839.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "human-body-d-clip-art-35243079-15-clipart-1024x839.jpg"; sourceTree = "<group>"; };
+		C5CB1A19219723F900430D51 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,9 @@
 				C5CB1A032194E9FC00430D51 /* AppDelegate.swift */,
 				C5CB1A052194E9FC00430D51 /* FirstViewController.swift */,
 				C5CB1A072194E9FC00430D51 /* SecondViewController.swift */,
+				C5CB1A19219723F900430D51 /* ThirdViewController.swift */,
 				C5CB1A092194E9FC00430D51 /* Main.storyboard */,
+				C5CB1A1721964C3700430D51 /* human-body-d-clip-art-35243079-15-clipart-1024x839.jpg */,
 				C5CB1A0C2194E9FE00430D51 /* Assets.xcassets */,
 				C5CB1A0E2194E9FE00430D51 /* LaunchScreen.storyboard */,
 				C5CB1A112194E9FE00430D51 /* Info.plist */,
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CB1A1821964C3700430D51 /* human-body-d-clip-art-35243079-15-clipart-1024x839.jpg in Resources */,
 				C5CB1A102194E9FE00430D51 /* LaunchScreen.storyboard in Resources */,
 				C5CB1A0D2194E9FE00430D51 /* Assets.xcassets in Resources */,
 				C5CB1A0B2194E9FC00430D51 /* Main.storyboard in Resources */,
@@ -140,6 +147,7 @@
 			files = (
 				C5CB1A082194E9FC00430D51 /* SecondViewController.swift in Sources */,
 				C5CB1A042194E9FC00430D51 /* AppDelegate.swift in Sources */,
+				C5CB1A1A219723F900430D51 /* ThirdViewController.swift in Sources */,
 				C5CB1A062194E9FC00430D51 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
