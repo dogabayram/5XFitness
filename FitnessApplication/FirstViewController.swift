@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import CoreData
 
 class FirstViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
    
     
-   
+    
     var hipArray = [Int]()
     let gender = ["Male","Female"]
     var heightArray = [Int]()
@@ -22,6 +22,9 @@ class FirstViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     var neck = Double()
     var waist = Double()
     var hip = Double()
+    var name = "Doga"
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     
 
     @IBOutlet weak var hipLabel: UILabel!
@@ -55,6 +58,20 @@ class FirstViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         for waist in 60...120 {
             waistArray.append(waist)
         }
+        
+        
+        
+        //let newExercise = Exercises(context: context)
+        //newExercise.name = name
+        
+        do {
+        try context.save()
+            print("Saved")
+        } catch {
+            print("Error")
+        }
+        
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
      
         
     }

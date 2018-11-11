@@ -7,27 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5B17B8F2198E956001E322A /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B17B8E2198E956001E322A /* ExerciseTableViewController.swift */; };
+		C5B17B912198E96C001E322A /* ExerciseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B17B902198E96C001E322A /* ExerciseCollectionViewController.swift */; };
 		C5CB1A042194E9FC00430D51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB1A032194E9FC00430D51 /* AppDelegate.swift */; };
 		C5CB1A062194E9FC00430D51 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB1A052194E9FC00430D51 /* FirstViewController.swift */; };
-		C5CB1A082194E9FC00430D51 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB1A072194E9FC00430D51 /* SecondViewController.swift */; };
+		C5CB1A082194E9FC00430D51 /* ExerciseWeightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB1A072194E9FC00430D51 /* ExerciseWeightsViewController.swift */; };
 		C5CB1A0B2194E9FC00430D51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CB1A092194E9FC00430D51 /* Main.storyboard */; };
 		C5CB1A0D2194E9FE00430D51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CB1A0C2194E9FE00430D51 /* Assets.xcassets */; };
 		C5CB1A102194E9FE00430D51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CB1A0E2194E9FE00430D51 /* LaunchScreen.storyboard */; };
 		C5CB1A1821964C3700430D51 /* human-body-d-clip-art-35243079-15-clipart-1024x839.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5CB1A1721964C3700430D51 /* human-body-d-clip-art-35243079-15-clipart-1024x839.jpg */; };
 		C5CB1A1A219723F900430D51 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB1A19219723F900430D51 /* ThirdViewController.swift */; };
+		C5CB1A1D21987CEC00430D51 /* FitnessTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5CB1A1B21987CEC00430D51 /* FitnessTracker.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C5B17B8E2198E956001E322A /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
+		C5B17B902198E96C001E322A /* ExerciseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewController.swift; sourceTree = "<group>"; };
 		C5CB1A002194E9FC00430D51 /* FitnessApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CB1A032194E9FC00430D51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5CB1A052194E9FC00430D51 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		C5CB1A072194E9FC00430D51 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		C5CB1A072194E9FC00430D51 /* ExerciseWeightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseWeightsViewController.swift; sourceTree = "<group>"; };
 		C5CB1A0A2194E9FC00430D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5CB1A0C2194E9FE00430D51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5CB1A0F2194E9FE00430D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5CB1A112194E9FE00430D51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5CB1A1721964C3700430D51 /* human-body-d-clip-art-35243079-15-clipart-1024x839.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "human-body-d-clip-art-35243079-15-clipart-1024x839.jpg"; sourceTree = "<group>"; };
 		C5CB1A19219723F900430D51 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		C5CB1A1C21987CEC00430D51 /* FitnessTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitnessTracker.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +68,16 @@
 			children = (
 				C5CB1A032194E9FC00430D51 /* AppDelegate.swift */,
 				C5CB1A052194E9FC00430D51 /* FirstViewController.swift */,
-				C5CB1A072194E9FC00430D51 /* SecondViewController.swift */,
 				C5CB1A19219723F900430D51 /* ThirdViewController.swift */,
 				C5CB1A092194E9FC00430D51 /* Main.storyboard */,
 				C5CB1A1721964C3700430D51 /* human-body-d-clip-art-35243079-15-clipart-1024x839.jpg */,
 				C5CB1A0C2194E9FE00430D51 /* Assets.xcassets */,
 				C5CB1A0E2194E9FE00430D51 /* LaunchScreen.storyboard */,
 				C5CB1A112194E9FE00430D51 /* Info.plist */,
+				C5CB1A1B21987CEC00430D51 /* FitnessTracker.xcdatamodeld */,
+				C5B17B8E2198E956001E322A /* ExerciseTableViewController.swift */,
+				C5B17B902198E96C001E322A /* ExerciseCollectionViewController.swift */,
+				C5CB1A072194E9FC00430D51 /* ExerciseWeightsViewController.swift */,
 			);
 			path = FitnessApplication;
 			sourceTree = "<group>";
@@ -145,10 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5CB1A082194E9FC00430D51 /* SecondViewController.swift in Sources */,
+				C5CB1A082194E9FC00430D51 /* ExerciseWeightsViewController.swift in Sources */,
+				C5CB1A1D21987CEC00430D51 /* FitnessTracker.xcdatamodeld in Sources */,
 				C5CB1A042194E9FC00430D51 /* AppDelegate.swift in Sources */,
+				C5B17B912198E96C001E322A /* ExerciseCollectionViewController.swift in Sources */,
 				C5CB1A1A219723F900430D51 /* ThirdViewController.swift in Sources */,
 				C5CB1A062194E9FC00430D51 /* FirstViewController.swift in Sources */,
+				C5B17B8F2198E956001E322A /* ExerciseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +360,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C5CB1A1B21987CEC00430D51 /* FitnessTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C5CB1A1C21987CEC00430D51 /* FitnessTracker.xcdatamodel */,
+			);
+			currentVersion = C5CB1A1C21987CEC00430D51 /* FitnessTracker.xcdatamodel */;
+			path = FitnessTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C5CB19F82194E9FC00430D51 /* Project object */;
 }
