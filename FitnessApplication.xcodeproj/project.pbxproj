@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		C5B17B8F2198E956001E322A /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B17B8E2198E956001E322A /* ExerciseTableViewController.swift */; };
 		C5B17B912198E96C001E322A /* ExerciseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B17B902198E96C001E322A /* ExerciseCollectionViewController.swift */; };
+		C5B17B9921991166001E322A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B17B9821991166001E322A /* CollectionViewCell.swift */; };
+		C5B17BA421991994001E322A /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5B17B9E21991993001E322A /* 1.jpg */; };
+		C5B17BA521991994001E322A /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5B17B9F21991994001E322A /* 4.jpg */; };
+		C5B17BA621991994001E322A /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5B17BA021991994001E322A /* 2.jpg */; };
+		C5B17BA721991994001E322A /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5B17BA121991994001E322A /* 5.jpg */; };
+		C5B17BA821991994001E322A /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5B17BA221991994001E322A /* 6.jpg */; };
+		C5B17BA921991994001E322A /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5B17BA321991994001E322A /* 3.jpg */; };
+		C5B17BAB2199C56E001E322A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B17BAA2199C56E001E322A /* TableViewCell.swift */; };
 		C5CB1A042194E9FC00430D51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB1A032194E9FC00430D51 /* AppDelegate.swift */; };
 		C5CB1A062194E9FC00430D51 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB1A052194E9FC00430D51 /* FirstViewController.swift */; };
 		C5CB1A082194E9FC00430D51 /* ExerciseWeightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB1A072194E9FC00430D51 /* ExerciseWeightsViewController.swift */; };
@@ -23,6 +31,14 @@
 /* Begin PBXFileReference section */
 		C5B17B8E2198E956001E322A /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
 		C5B17B902198E96C001E322A /* ExerciseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewController.swift; sourceTree = "<group>"; };
+		C5B17B9821991166001E322A /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		C5B17B9E21991993001E322A /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		C5B17B9F21991994001E322A /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		C5B17BA021991994001E322A /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		C5B17BA121991994001E322A /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		C5B17BA221991994001E322A /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		C5B17BA321991994001E322A /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		C5B17BAA2199C56E001E322A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C5CB1A002194E9FC00430D51 /* FitnessApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CB1A032194E9FC00430D51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5CB1A052194E9FC00430D51 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +63,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5B17B9D21991988001E322A /* exerciseName */ = {
+			isa = PBXGroup;
+			children = (
+				C5B17B9E21991993001E322A /* 1.jpg */,
+				C5B17BA021991994001E322A /* 2.jpg */,
+				C5B17BA321991994001E322A /* 3.jpg */,
+				C5B17B9F21991994001E322A /* 4.jpg */,
+				C5B17BA121991994001E322A /* 5.jpg */,
+				C5B17BA221991994001E322A /* 6.jpg */,
+			);
+			path = exerciseName;
+			sourceTree = "<group>";
+		};
 		C5CB19F72194E9FC00430D51 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +95,7 @@
 		C5CB1A022194E9FC00430D51 /* FitnessApplication */ = {
 			isa = PBXGroup;
 			children = (
+				C5B17B9D21991988001E322A /* exerciseName */,
 				C5CB1A032194E9FC00430D51 /* AppDelegate.swift */,
 				C5CB1A052194E9FC00430D51 /* FirstViewController.swift */,
 				C5CB1A19219723F900430D51 /* ThirdViewController.swift */,
@@ -78,6 +108,8 @@
 				C5B17B8E2198E956001E322A /* ExerciseTableViewController.swift */,
 				C5B17B902198E96C001E322A /* ExerciseCollectionViewController.swift */,
 				C5CB1A072194E9FC00430D51 /* ExerciseWeightsViewController.swift */,
+				C5B17B9821991166001E322A /* CollectionViewCell.swift */,
+				C5B17BAA2199C56E001E322A /* TableViewCell.swift */,
 			);
 			path = FitnessApplication;
 			sourceTree = "<group>";
@@ -140,9 +172,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5B17BA921991994001E322A /* 3.jpg in Resources */,
 				C5CB1A1821964C3700430D51 /* human-body-d-clip-art-35243079-15-clipart-1024x839.jpg in Resources */,
+				C5B17BA521991994001E322A /* 4.jpg in Resources */,
+				C5B17BA721991994001E322A /* 5.jpg in Resources */,
+				C5B17BA821991994001E322A /* 6.jpg in Resources */,
 				C5CB1A102194E9FE00430D51 /* LaunchScreen.storyboard in Resources */,
+				C5B17BA421991994001E322A /* 1.jpg in Resources */,
 				C5CB1A0D2194E9FE00430D51 /* Assets.xcassets in Resources */,
+				C5B17BA621991994001E322A /* 2.jpg in Resources */,
 				C5CB1A0B2194E9FC00430D51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +194,8 @@
 			files = (
 				C5CB1A082194E9FC00430D51 /* ExerciseWeightsViewController.swift in Sources */,
 				C5CB1A1D21987CEC00430D51 /* FitnessTracker.xcdatamodeld in Sources */,
+				C5B17B9921991166001E322A /* CollectionViewCell.swift in Sources */,
+				C5B17BAB2199C56E001E322A /* TableViewCell.swift in Sources */,
 				C5CB1A042194E9FC00430D51 /* AppDelegate.swift in Sources */,
 				C5B17B912198E96C001E322A /* ExerciseCollectionViewController.swift in Sources */,
 				C5CB1A1A219723F900430D51 /* ThirdViewController.swift in Sources */,

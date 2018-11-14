@@ -22,7 +22,7 @@ class FirstViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     var neck = Double()
     var waist = Double()
     var hip = Double()
-    var name = "Doga"
+    var name = "Doga" 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     
@@ -150,10 +150,13 @@ class FirstViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             let result = 495 / (1.0324 - 0.19077 * (log10(waist-neck)) + 0.15456 * (log10(height))) - 450
             let newResult = Double(round(1000*result)/1000)
             
-            
+            if newResult > 4 {
             
             resultLabel.text = "\(String(newResult))% Body Fat"
-            
+            } else {
+                resultLabel.text = "Could not find information"
+
+            }
         } else if genderLabel.text == "Female" {
 //            -35.601 - (0.515 x height) + (0. 173 x hip circumference) - (1.574 x forearm circumference) - (0.533 x neck circumference) - (0.200 x wrist circumference) + (105.328 x Log10(weight))
             
@@ -162,10 +165,11 @@ class FirstViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             
              let result = 495 / (1.29579 - 0.35004 * (log10(waist+hip-neck)) + 0.22100 * (log10(height))) - 450
              let newResult = Double(round(1000*result)/1000)
-            
+            if newResult > 4 {
             resultLabel.text = "\(String(newResult))% Body Fat"
-            
-            
+            } else {
+                resultLabel.text = "Could not find information"
+            }
             
         } else {
             resultLabel.text = "Missing inputs"
