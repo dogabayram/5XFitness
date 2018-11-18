@@ -8,15 +8,19 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 
-class ExerciseTableViewController: UITableViewController,toTableView,newProtocol{
+class ExerciseTableViewController: UITableViewController,toTableView,newProtocol,GADBannerViewDelegate{
     
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var exerciseArray = [Int]()
     var weightsArray = [Int]()
     var repititionArray = [Int]()
     var setsArray = [Int]()
     var row = 0
+    var interstitial: GADInterstitial!
+
    
     
    var exerciseArrayClass = [Exercises]()
@@ -30,10 +34,10 @@ class ExerciseTableViewController: UITableViewController,toTableView,newProtocol
         self.weightsArray.append(weights)
         self.repititionArray.append(reps)
         self.setsArray.append(sets)
-        print("DOGA BAYRAM")
-        print("weight : " + String(weights))
-        print(sets)
-        print(reps)
+//        print("DOGA BAYRAM")
+//        print("weight : " + String(weights))
+//        print(sets)
+//        print(reps)
         //set = String(sets)
         
     let newExercise = Exercises(context: context)
@@ -45,7 +49,13 @@ class ExerciseTableViewController: UITableViewController,toTableView,newProtocol
         exerciseArrayClass.append(newExercise)
         save()
         
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        }
         
+        interstitial = GADInterstitial(adUnitID: "")
+        let request = GADRequest()
+        interstitial.load(request)
         
     self.tableView.reloadData()
         
@@ -79,6 +89,15 @@ class ExerciseTableViewController: UITableViewController,toTableView,newProtocol
 
         save()
         
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        }
+        
+        
+        interstitial = GADInterstitial(adUnitID: "")
+        let request = GADRequest()
+        interstitial.load(request)
+        
         self.tableView.reloadData()
         
 
@@ -90,13 +109,28 @@ class ExerciseTableViewController: UITableViewController,toTableView,newProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
   
-        let filePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        print(filePath)
+       // let filePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+       // print(filePath)
         
-        
+        let longpress = UILongPressGestureRecognizer(target: self, action: #selector(ExerciseTableViewController().longPressGestureRecognized(_:)))
+        tableView.addGestureRecognizer(longpress)
        // print(weightsArray)
         
         load()
+        
+        interstitial = GADInterstitial(adUnitID: "")
+        let request = GADRequest()
+        interstitial.load(request)
+        
+        
+
+        bannerView.adUnitID = ""
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
+
+
+        
    
         tableView.reloadData()
 
@@ -155,11 +189,113 @@ class ExerciseTableViewController: UITableViewController,toTableView,newProtocol
             save()
             
             
+            
+           
+            
             tableView.reloadData()
         
             }
             
         }
+    
+    
+    
+    @objc func longPressGestureRecognized(_ gestureRecognizer: UIGestureRecognizer) {
+        let longPress = gestureRecognizer as! UILongPressGestureRecognizer
+        let state = longPress.state
+        let locationInView = longPress.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: locationInView)
+        struct My {
+            static var cellSnapshot : UIView? = nil
+            static var cellIsAnimating : Bool = false
+            static var cellNeedToShow : Bool = false
+        }
+        struct Path {
+            static var initialIndexPath : IndexPath? = nil
+        }
+        switch state {
+        case UIGestureRecognizer.State.began:
+            if indexPath != nil {
+                Path.initialIndexPath = indexPath
+                let cell = tableView.cellForRow(at: indexPath!) as UITableViewCell!
+                My.cellSnapshot  = snapshotOfCell(cell!)
+                var center = cell?.center
+                My.cellSnapshot!.center = center!
+                My.cellSnapshot!.alpha = 0.0
+                tableView.addSubview(My.cellSnapshot!)
+                UIView.animate(withDuration: 0.25, animations: { () -> Void in
+                    center?.y = locationInView.y
+                    My.cellIsAnimating = true
+                    My.cellSnapshot!.center = center!
+                    My.cellSnapshot!.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                    My.cellSnapshot!.alpha = 0.98
+                    cell?.alpha = 0.0
+                }, completion: { (finished) -> Void in
+                    if finished {
+                        My.cellIsAnimating = false
+                        if My.cellNeedToShow {
+                            My.cellNeedToShow = false
+                            UIView.animate(withDuration: 0.25, animations: { () -> Void in
+                                cell?.alpha = 1
+                            })
+                        } else {
+                            cell?.isHidden = true
+                        }
+                    }
+                })
+            }
+        case UIGestureRecognizer.State.changed:
+            if My.cellSnapshot != nil {
+                var center = My.cellSnapshot!.center
+                center.y = locationInView.y
+                My.cellSnapshot!.center = center
+                if ((indexPath != nil) && (indexPath != Path.initialIndexPath)) {
+                    exerciseArrayClass.insert(exerciseArrayClass.remove(at: Path.initialIndexPath!.row), at: indexPath!.row)
+                    tableView.moveRow(at: Path.initialIndexPath!, to: indexPath!)
+                    Path.initialIndexPath = indexPath
+                }
+            }
+        default:
+            if Path.initialIndexPath != nil {
+                let cell = tableView.cellForRow(at: Path.initialIndexPath!) as! TableViewCell
+                if My.cellIsAnimating {
+                    My.cellNeedToShow = true
+                } else {
+                    cell.isHidden = false
+                    cell.alpha = 0.0
+                }
+                UIView.animate(withDuration: 0.25, animations: { () -> Void in
+                    My.cellSnapshot!.center = (cell.center)
+                    My.cellSnapshot!.transform = CGAffineTransform.identity
+                    My.cellSnapshot!.alpha = 0.0
+                    cell.alpha = 1.0
+                }, completion: { (finished) -> Void in
+                    if finished {
+                        Path.initialIndexPath = nil
+                        My.cellSnapshot!.removeFromSuperview()
+                        My.cellSnapshot = nil
+                    }
+                })
+            }
+        }
+        save()
+    }
+    
+    func snapshotOfCell(_ inputView: UIView) -> UIView {
+        UIGraphicsBeginImageContextWithOptions(inputView.bounds.size, false, 0.0)
+        inputView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()! as UIImage
+        UIGraphicsEndImageContext()
+        let cellSnapshot : UIView = UIImageView(image: image)
+        cellSnapshot.layer.masksToBounds = false
+        cellSnapshot.layer.cornerRadius = 0.0
+        cellSnapshot.layer.shadowOffset = CGSize(width: -5.0, height: 0.0)
+            cellSnapshot.layer.shadowRadius = 5.0
+            cellSnapshot.layer.shadowOpacity = 0.4
+            return cellSnapshot
+    }
+    
+    
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -203,6 +339,18 @@ class ExerciseTableViewController: UITableViewController,toTableView,newProtocol
         }
         
     }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     
     
     

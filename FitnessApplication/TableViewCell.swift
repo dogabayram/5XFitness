@@ -38,3 +38,24 @@ class TableViewCell: UITableViewCell {
     }
 
 }
+
+
+
+class RoundedImageView: UIImageView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let radius = self.frame.width / 5
+        layer.cornerRadius = radius
+        clipsToBounds = true
+    }
+}
+    
+    class RoundedButton : UIButton {
+        override func layoutSubviews() {
+            super.layoutSubviews()
+            let radius = self.frame.width / 10
+            layer.cornerRadius = radius
+            clipsToBounds = true
+        }
+    
+}

@@ -30,7 +30,7 @@ class ExerciseCollectionViewController: UICollectionViewController,toTableView {
     var newSegueName = "newExercise"
     
     
-    let exerciseImageArray = ["1","2","3","4","5","6"]
+    let exerciseImageArray = ["1","2","3","4","5","6","7"]
     var newIndexPath = Int()
     var delegate : newProtocol?
     

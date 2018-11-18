@@ -184,11 +184,11 @@ class FirstViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     
     @IBAction func restartButton(_ sender: UIButton) {
         
-        hipLabel.text = "Hip Circumference"
+        hipLabel.text = "Hip cm"
         genderLabel.text = "Gender"
         heightLabel.text = "Height"
-        neckLabel.text = "Neck Circumference"
-        waistLabel.text = "Waist Circumference"
+        neckLabel.text = "Neck cm"
+        waistLabel.text = "Waist cm"
         resultLabel.text = "Your Body Fat Percentage"
         
         
